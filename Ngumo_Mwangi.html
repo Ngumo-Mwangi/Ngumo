@@ -1,0 +1,2244 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Ngumo Mwangi - Creative Technologist, Entrepreneur, Artist and Innovator.">
+<meta name="author" content="Ngumo Mwangi">
+  <title>Ngumo_Mwangi</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<meta name="keywords" content="Ngumo Mwangi, Creative Technologist, Tattoo Artist, Entrepreneur, Fashion Designer, IT Specialist">
+<meta property="og:title" content="Ngumo Mwangi Portfolio">
+<meta property="og:description" content="Creative technologist, entrepreneur and artist portfolio">
+<meta property="og:image" content="assets/profile.jpg">
+  <!-- Google Fonts -->
+  <!-- Fancy Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lobster&display=swap" rel="stylesheet">
+  <!-- Professional Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Scary / Eerie Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&display=swap" rel="stylesheet">
+  <!-- Original Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+section, .hero-header, #chatbot {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+    html, body {
+      overflow-x: hidden; 
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      background-color: #f4f4f4;
+      color: #333;
+      font-family: 'Open Sans', sans-serif; /* default professional font */
+    }
+
+    /* Hero Header */
+    .hero-header {
+      position: relative;
+      height: 500px;
+      width: 95.1%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+        margin-bottom: 40px;
+      padding: 25px 30px;
+      border-radius: 12px;
+     
+      
+      
+    }
+    .hero-img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+        margin-bottom: 40px;
+      padding: 25px 30px;
+      border-radius: 12px;
+      
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.7));
+      z-index: 2;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      color: #fff;
+    }
+    .hero-content h1 {
+      font-family: 'Times New Roman', Times, serif; /* Fancy font for name */
+      font-size: 3.2em;
+      text-shadow: 0 6px 20px rgba(0,0,0,0.8);
+      letter-spacing: 1.5px;
+      padding: 0 20px;
+    }
+    .hero-content h2.typing {
+      font-family: 'Creepster', cursive; /* Scary font for titles */
+      font-size: 1.5em;
+      margin-top: 10px;
+    }
+    @media (max-width: 768px) {
+      .hero-header {
+        height: 300px;
+      }
+      .hero-content h1 {
+        font-size: 2.2em;
+      }
+    }
+
+    /* Header */
+    header {
+      background-color: #2c3e50;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 3em;
+      letter-spacing: 1px;
+      font-family: 'Lobster', cursive; /* Fancy */
+    }
+    header p {
+      margin: 5px 0;
+      font-size: 1.2em;
+      font-family: 'Roboto', sans-serif; /* Professional */
+    }
+
+
+.section-video {
+  width: 100%;
+  max-width: 150px;   /* smaller width */
+  height:150px ;
+  border-radius: 8px; /* slightly smaller corners */
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  object-fit: cover;
+  display: block;
+  margin: 5px auto;  /* smaller vertical spacing */
+  text-align: left;
+}
+    /* Section styles */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px;
+    }
+    section {
+      margin-bottom: 40px;
+      background-color: #fff;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.08);
+    }
+    
+    section h2 {
+      color: #2c3e50;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 6px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      font-family: 'Lobster', cursive; /* Fancy for section headings */
+      font-size: 2em;
+      letter-spacing: 0.5px;
+    }
+    section h2 i {
+      margin-right: 10px;
+      color: pink;
+    }
+    h3 {
+      color: rgb(236, 0, 39);
+      margin-top: 15px;
+      font-family: 'Creepster', cursive; /* Scary for subheadings */
+      font-size: larger;
+    }
+    p, li {
+      font-family: 'Roboto', sans-serif; /* Professional for body */
+      line-height: 1.6;
+    }
+    ul {
+      padding-left: 20px;
+    }
+
+    /* Skills */
+    .skills span {
+      display: inline-block;
+      background: pink;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin: 3px 3px 3px 0;
+      font-size: 0.9em;
+      font-family: 'Lobster', cursive; /* Fancy */
+    }
+
+    /* Social links */
+    .social-links a {
+      margin-right: 15px;
+      text-decoration: none;
+      color: pink;
+      font-weight: bold;
+      transition: color 0.3s, transform 0.3s;
+      font-family: 'Roboto', sans-serif; /* professional */
+    }
+
+    /* Floating social sidebar */
+    .floating-social a {
+      width: 52px;
+      height: 52px;
+      font-size: 22px;
+    }
+
+    /* Scroll Progress */
+    .scroll-progress {
+      position: fixed;
+      top:0;
+      left:0;
+      height:6px;
+      width:0%;
+      background:pink;
+      z-index:9999;
+      transition: width 0.2s ease;
+    }
+
+    /* Footer */
+    footer, .footer-content {
+      font-family: 'Open Sans', sans-serif; /* Professional */
+    }
+
+    footer h2 {
+      font-family: 'Lobster', cursive; /* Fancy */
+    }
+
+    /* Contact Form */
+    .contact-form-section {
+      font-family: 'Roboto', sans-serif; /* Professional */
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+      section h2 { font-size: 1.5em; }
+      .skills span { font-size: 0.8em; }
+    }
+  </style>
+
+</head>
+<body>
+
+    <!-- Floating Cloud Watermark -->
+<div class="watermark" id="watermark"></div>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  overflow: hidden;
+  position: relative;
+  background: #fff; /* your base background */
+}
+
+.watermark {
+  position: fixed;   /* cover the entire viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* clicks pass through */
+  z-index: 0; 
+             /* lowest layer */
+}
+
+.watermark span {
+  position: absolute;
+  color: rgb(245, 12, 12); /* subtle background effect */
+  font-size: 48px;
+  font-weight: lighter;
+  white-space: nowrap;
+  user-select: none;
+  align-items:flex-end;
+  transform-origin: end to end;
+  font-family: 'Creepster', cursive; /* Scary font for titles */
+}
+
+/* Responsive font adjustments */
+@media (max-width: 900px) {
+  .watermark span { font-size: 50px; }
+}
+@media (max-width: 500px) {
+  .watermark span { font-size: 30px; }
+}
+
+/* Main content always above watermark */
+.main-content {
+  position: relative;
+  z-index: 1; 
+}
+</style>
+
+<script>
+const watermarkContainer = document.getElementById('watermark');
+const text = "EST 2002 April 29th";
+const count = 10;
+const watermarks = [];
+
+for (let i = 0; i < count; i++) {
+  const span = document.createElement('span');
+  span.textContent = text;
+
+  // center starting point
+  let cx = Math.random() * window.innerWidth;
+  let cy = Math.random() * window.innerHeight;
+
+  // spiral motion parameters
+  let radiusX = 50 + Math.random() * 150;
+  let radiusY = 50 + Math.random() * 150;
+  let angle = Math.random() * 2 * Math.PI;
+  let speed = 0.001 + Math.random() * 0.002; // radial speed
+
+  // rotation & scaling
+  let rotation = Math.random() * 360;
+  let rotationSpeed = (Math.random() * 0.3 + 0.1) * (Math.random() < 0.5 ? 1 : -1);
+  let scale = 0.8 + Math.random() * 0.7;
+  let scaleSpeed = 0.001 + Math.random() * 0.002;
+  
+  // opacity
+  let opacity = 0.05 + Math.random() * 0.05;
+  let opacitySpeed = 0.0005 + Math.random() * 0.001;
+
+  span.style.left = cx + "px";
+  span.style.top = cy + "px";
+  span.style.transform = `rotate(${rotation}deg) scale(${scale})`;
+  span.style.opacity = opacity;
+
+  watermarkContainer.appendChild(span);
+
+  watermarks.push({span, cx, cy, radiusX, radiusY, angle, speed, rotation, rotationSpeed, scale, scaleSpeed, opacity, opacitySpeed});
+}
+
+function animateWatermarks() {
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+
+  watermarks.forEach(w => {
+    // spiral movement
+    w.angle += w.speed * 2 * Math.PI;
+    w.cx += Math.sin(w.angle) * 0.5;
+    w.cy += Math.cos(w.angle) * 0.5;
+
+    // wrap around edges
+    if (w.cx > width + 100) w.cx = -100;
+    if (w.cx < -100) w.cx = width + 100;
+    if (w.cy > height + 100) w.cy = -100;
+    if (w.cy < -100) w.cy = height + 100;
+
+    // rotation & scale
+    w.rotation += w.rotationSpeed;
+    w.scale += w.scaleSpeed;
+    if (w.scale > 1.5 || w.scale < 0.8) w.scaleSpeed *= -1;
+
+    // opacity oscillation
+    w.opacity += w.opacitySpeed;
+    if (w.opacity > 0.1 || w.opacity < 0.03) w.opacitySpeed *= -1;
+
+    // apply styles
+    w.span.style.left = w.cx + "px";
+    w.span.style.top = w.cy + "px";
+    w.span.style.transform = `rotate(${w.rotation}deg) scale(${w.scale})`;
+    w.span.style.opacity = w.opacity;
+  });
+
+  requestAnimationFrame(animateWatermarks);
+}
+
+animateWatermarks();
+
+window.addEventListener('resize', () => {
+  watermarks.forEach(w => {
+    w.cx = Math.random() * window.innerWidth;
+    w.cy = Math.random() * window.innerHeight;
+  });
+});
+</script>
+
+
+<header class="hero-header" id="home">
+  <img src="assets/profile.jpg" alt="Wilfred Ngumo portrait" class="hero-img">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+   <h1>Ngumo Mwangi</h1>
+   <h2 class="typing"></h2>
+   <p class="footer-slogan">If You’re Not Loud, You’re Not Allowed.</p>
+  
+   
+   <script>
+     const textArray = ["Creative Technologist","Digital Problem Solver","Future Innovator","Business man","Enterprenuer","artist"];
+     let typingElement = document.querySelector(".typing");
+     let textIndex = 0; let charIndex = 0;
+     function typeEffect() {
+       if(charIndex < textArray[textIndex].length){
+         typingElement.textContent += textArray[textIndex].charAt(charIndex);
+         charIndex++;
+         setTimeout(typeEffect, 80);
+       } else { setTimeout(eraseEffect, 2000); }
+     }
+     function eraseEffect(){
+       if(charIndex > 0){
+         typingElement.textContent = textArray[textIndex].substring(0,charIndex-1);
+         charIndex--;
+         setTimeout(eraseEffect, 50);
+       } else {
+         textIndex = (textIndex + 1) % textArray.length;
+         setTimeout(typeEffect, 500);
+       }
+     }
+     document.addEventListener("DOMContentLoaded", function(){ setTimeout(typeEffect, 1000); });
+   </script>
+  </div>
+</header>
+
+<div class="section-nav">
+  <a href="#home">Home</a>
+  <a href="#core-identity">Core Identity</a>
+  <a href="#education">Education</a>
+  <a href="#experience">Experience</a>
+  <a href="#skills">Skills</a>
+  <a href="#values">Values</a>
+  <a href="#community">Community</a>
+  <a href="#destinations">Destinations</a>
+  <a href="#hobbies">Hobbies</a>
+  <a href="#footer">CONTACT ME</a>
+</div>
+
+
+<style>
+.section-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 15px 20px;
+  background: #111;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+}
+
+.section-nav.shrink {
+  padding: 8px 20px;       /* reduce vertical padding */
+  box-shadow: 0 3px 15px rgba(0,0,0,0.6);
+}
+.section-nav a {
+  text-decoration: none;
+  background: pink;
+  color: #000;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-family: 'Creepster', cursive; /* Scary font for titles */
+  font-size: 1em;
+  transition: all 0.3s ease; /* already present */
+}
+
+.section-nav.shrink a {
+  padding: 6px 14px;     /* smaller padding */
+  font-size: 0.8em;      /* smaller font */
+}
+
+.section-nav a {
+  text-decoration: none;
+  background: pink;
+  color: #ff0303;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Scary font for titles */
+}
+
+.section-nav a:hover {
+  background: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+/* Optional: add some top padding to body so content doesn't hide under nav */
+body {
+  padding-top: 70px; /* adjust based on nav height */
+}
+
+</style>
+
+<script>
+window.addEventListener('scroll', function() {
+  const nav = document.querySelector('.section-nav');
+  if(window.scrollY > 50){   // trigger after scrolling 50px
+    nav.classList.add('shrink');
+  } else {
+    nav.classList.remove('shrink');
+  }
+});
+</script>
+
+
+
+
+<div class="scroll-progress"></div>
+<style>
+  .scroll-progress{
+position:fixed;
+top:0;
+left:0;
+height:6px;
+width:0%;
+background:pink;
+z-index:9999;
+transition:width 0.2s ease;
+}
+</style>
+<script>
+
+window.onscroll = function() {
+  let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  let scrolled = (winScroll / height) * 100;
+  document.querySelector(".scroll-progress").style.width = scrolled + "%";
+};
+</script>
+
+<!-- Floating Social Media Sidebar -->
+<div class="floating-social">
+  <a href="https://www.linkedin.com/in/ngumo-mwangi/" class="linkedin"><i class="fab fa-linkedin"></i></a>
+  <a href="https://www.instagram.com/Ngumo_Mwangi" class="instagram"><i class="fab fa-instagram"></i></a>
+  <a href="https://twitter.com/Ngumo_Mwangii" class="twitter"><i class="fab fa-twitter"></i></a>
+  <a href="https://github.com/Ngumo-Mwangi" class="github"><i class="fab fa-github"></i></a>
+  <a href="https://www.facebook.com/NgumoMwangi" class="facebook"><i class="fab fa-facebook"></i></a>
+  <a href="https://www.tiktok.com/@Ngumo_Mwangi" class="tiktok"><i class="fab fa-tiktok"></i></a>
+  <a href="https://www.youtube.com/@Ngumo_Mwangi" class="youtube"><i class="fab fa-youtube"></i></a>
+  <a href="https://www.snapchat.com/add/Ngumo_Mwangii" class="snapchat"><i class="fab fa-snapchat"></i></a>
+  <a href="https://t.me/Ngumo_Mwangi" class="telegram"><i class="fab fa-telegram"></i></a>
+  <a href="https://www.pinterest.com/Ngumo_Mwangi" class="pinterest"><i class="fab fa-pinterest"></i></a>
+</div>
+
+<style>
+/* Floating sidebar base */
+.floating-social {
+  position: fixed;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%) translateX(-20px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 9999;
+}
+
+/* Show animation */
+.floating-social.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-50%) translateX(0);
+}
+
+.floating-social a {
+  width: 52px;
+  height: 52px;
+  background: #222;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 22px;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Platform colors on hover */
+.floating-social a.linkedin:hover { background: #0a66c2; }
+.floating-social a.instagram:hover { background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af); }
+.floating-social a.twitter:hover { background: #1da1f2; }
+.floating-social a.github:hover { background: #333; box-shadow: 0 0 12px #fff; }
+.floating-social a.facebook:hover { background: #1877f2; }
+.floating-social a.tiktok:hover { background: #000; box-shadow: 0 0 10px #69C9D0; }
+.floating-social a.youtube:hover { background: #FF0000; }
+.floating-social a.snapchat:hover { background: #FFFC00; color:#000; }
+.floating-social a.telegram:hover { background: #229ED9; }
+.floating-social a.pinterest:hover  { background: #FF0000; }
+
+/* Hover motion */
+.floating-social a:hover {
+  transform: scale(1.25) rotate(3deg);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+</style>
+<style>
+/* Floating sidebar base */
+.floating-social {
+  position: fixed;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%) translateX(-20px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 9999;
+}
+
+/* Show animation */
+.floating-social.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Icon styles */
+.floating-social a {
+  width: 52px;
+  height: 52px;
+  background: #222;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 22px;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Platform colors on hover */
+.floating-social a.linkedin:hover { background: #0a66c2; }
+.floating-social a.instagram:hover { background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af); }
+.floating-social a.twitter:hover { background: #1da1f2; }
+.floating-social a.github:hover { background: #333; box-shadow: 0 0 12px #fff; }
+.floating-social a.facebook:hover { background: #1877f2; }
+.floating-social a.tiktok:hover { background: #000; box-shadow: 0 0 10px #69C9D0; }
+.floating-social a.youtube:hover { background: #FF0000; }
+.floating-social a.snapchat:hover { background: #FFFC00; color:#000; }
+.floating-social a.telegram:hover { background: #229ED9; }
+.floating-social a.pinterest:hover  { background: #FF0000; }
+
+/* Hover motion */
+.floating-social a:hover {
+  transform: scale(1.25) rotate(3deg);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+/* Responsive Adjustments */
+
+/* Tablets (medium screens) */
+@media (max-width: 900px) {
+  .floating-social a {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+}
+
+/* Mobile (small screens) */
+@media (max-width: 600px) {
+  .floating-social {
+    display: none; /* hide completely on mobile */
+  }
+}
+
+/* Floating sidebar base */
+.floating-social {
+  position: fixed;
+  top: 50%;
+  left: 0; /* start hidden off-screen */
+  transform: translateY(-50%) translateX(-80px); /* off-screen */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 9999;
+}
+
+/* Show animation */
+.floating-social.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-50%) translateX(12px); /* slide into view */
+}
+
+/* Icon styles */
+.floating-social a {
+  width: 52px;
+  height: 52px;
+  background: #222;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 22px;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Platform hover colors */
+.floating-social a.linkedin:hover { background: #0a66c2; }
+.floating-social a.instagram:hover { background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af); }
+.floating-social a.twitter:hover { background: #1da1f2; }
+.floating-social a.github:hover { background: #333; box-shadow: 0 0 12px #fff; }
+.floating-social a.facebook:hover { background: #1877f2; }
+.floating-social a.tiktok:hover { background: #000; box-shadow: 0 0 10px #69C9D0; }
+.floating-social a.youtube:hover { background: #FF0000; }
+.floating-social a.snapchat:hover { background: #FFFC00; color:#000; }
+.floating-social a.telegram:hover { background: #229ED9; }
+.floating-social a.pinterest:hover  { background: #FF0000; }
+
+/* Hover motion */
+.floating-social a:hover {
+  transform: scale(1.25) rotate(3deg);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+/* Responsive adjustments */
+/* Tablets */
+@media (max-width: 900px) {
+  .floating-social a {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .floating-social {
+    display: none; /* hide completely */
+  }
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const floatingSocial = document.querySelector('.floating-social');
+  const container = document.querySelector('.container');
+  const header = document.querySelector('header');
+  const footer = document.querySelector('footer');
+
+  function toggleFloatingSocial() {
+    const scrollTop = window.scrollY;
+    const windowHeight = window.innerHeight;
+
+    const containerTop = container.offsetTop;
+    const containerBottom = container.offsetTop + container.offsetHeight;
+
+    const headerBottom = header.offsetTop + header.offsetHeight;
+    const footerTop = footer.offsetTop;
+
+    // Show when viewport middle is inside container, but before footer
+    if(scrollTop + windowHeight/2 > containerTop && scrollTop + windowHeight/2 < footerTop) {
+      floatingSocial.classList.add('show');
+    } else {
+      floatingSocial.classList.remove('show');
+    }
+  }
+
+  window.addEventListener('scroll', toggleFloatingSocial);
+  window.addEventListener('resize', toggleFloatingSocial);
+
+  // Run once on load
+  toggleFloatingSocial();
+});
+
+
+window.addEventListener('scroll', () => {
+  const scrollTop = window.scrollY;
+  const windowHeight = window.innerHeight;
+
+  const containerTop = container.offsetTop;
+  const footerTop = footer.offsetTop;
+
+  // Show/hide sidebar
+  if(scrollTop + windowHeight/2 > containerTop && scrollTop + windowHeight/2 < footerTop) {
+    floatingSocial.classList.add('show');
+  } else {
+    floatingSocial.classList.remove('show');
+  }
+
+  // Rotate icons subtly based on scroll
+  icons.forEach((icon, index) => {
+    const rotateAmount = Math.sin((scrollTop / 50) + index) * 5; // max ±5deg
+    icon.style.transform = `translateY(-50%) translateX(${floatingSocial.classList.contains('show') ? '12px' : '-80px'}) rotate(${rotateAmount}deg) scale(${floatingSocial.classList.contains('show') ? 1 : 0.8})`;
+  });
+});
+</script>
+
+
+
+  <div class="container">
+<!-- ABOUT ME SECTION -->
+<section id="about-me">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+#about-me {
+    width: 100%;
+    background: #111;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    padding: 40px 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.about-wrapper {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 50px;
+    flex-wrap: wrap;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease-out;
+}
+
+.about-wrapper.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Left column: image */
+.about-image {
+    flex: 0 0 250px;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #ffcc00;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.about-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* Right column: text */
+.about-text {
+    flex: 1;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #d1d1d1;
+}
+
+.about-title {
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #ffcc00;
+}
+
+.about-subtitle {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+/* Responsive */
+@media(max-width: 768px){
+    .about-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-image {
+        margin-bottom: 30px;
+    }
+
+    .about-title {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .about-subtitle {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .about-text {
+        font-size: 16px;
+    }
+}
+</style>
+
+<div class="about-wrapper">
+
+    <!-- Left Column: Photo -->
+    <div class="about-image">
+        <img src="assets/profe.jpg" alt="Ngumo Mwangi Photo">
+    </div>
+
+    <!-- Right Column: Text -->
+    <div class="about-text">
+
+        <h2 class="about-title">ABOUT ME</h2>
+        <h3 class="about-subtitle">Creative Technologist | Entrepreneur | Innovator</h3>
+
+        <p>
+        Ngumo Mwangi is a multidisciplinary creator, entrepreneur, and creative technologist driven by innovation, artistic expression, and community development. His work sits at the intersection of technology, art, fashion, music, and business, where he transforms ideas into impactful projects and creative ventures.
+        </p>
+
+        <p>
+        Raised in Dallas, Embu, Kenya, Ngumo’s early life was deeply rooted in farming, community collaboration, and entrepreneurial thinking. Growing up in an environment that required discipline and resilience, he learned the value of consistent effort, responsibility, and adaptability. Early mornings tending livestock, helping with farming activities, and balancing school responsibilities shaped a mindset centered on perseverance, hard work, and practical problem solving.
+        </p>
+
+        <p>
+        The rhythm of rural life taught him patience and long-term thinking, while strong community bonds instilled values of teamwork, leadership, and mutual support. These early experiences became the foundation for his ability to lead projects, innovate creatively, and build ventures that combine culture, technology, and entrepreneurship.
+        </p>
+
+        <p>
+        Ngumo began his academic journey at St. Michael Primary School, where he developed strong discipline and curiosity for learning. He later attended Embu Urban Integrated Secondary School, where he strengthened his leadership skills, critical thinking, and resilience through academic and extracurricular activities.
+        </p>
+
+        <p>
+        He continued his education at Jomo Kenyatta University of Agriculture and Technology, where he expanded his expertise across technology, agriculture, creative arts, and information technology. His university experience refined his skills in project management, research, digital innovation, and professional collaboration.
+        </p>
+
+        <p>
+        Throughout his career, Ngumo has built and contributed to several ventures that reflect his diverse creative and technical interests.
+        </p>
+
+        <p>
+        At Exquisite Tatu Nation, he leads creative projects within a tattoo studio that blends artistic expression with modern digital branding and cultural identity. His work includes designing tattoos, mentoring artists, and coordinating creative media and artistic direction.
+        </p>
+
+        <p>
+        Through Intenzionale Fashion, he contributes to the development of a fashion brand focused on creative streetwear and artistic identity. His responsibilities include design development, production oversight, marketing strategies, and e-commerce operations.
+        </p>
+
+        <p>
+        In the events and entertainment industry, Ngumo has worked with Audio Mix Sound Center, where he manages sound engineering systems, supports live event production, and implements technical solutions for professional audio experiences.
+        </p>
+
+        <p>
+        He is also involved in Ujenzi Art Shop, where he facilitates creative workshops, supports artists, and manages artistic and digital projects that empower creativity within the community.
+        </p>
+
+        <p>
+        Beyond creative industries, Ngumo maintains a strong connection to agriculture through GKM Farming and Produce, where he participates in crop planning, livestock management, and agricultural production. His work with Mwanzi Lisi Building and Construction further demonstrates his involvement in operational coordination and construction project support.
+        </p>
+
+        <p>
+        Ngumo’s skillset spans multiple creative and technical disciplines, including drawing, tattoo artistry, graphic design, video creation, songwriting, fashion design, audio engineering, information technology, event production, farming techniques, and project management. In addition to technical skills, he emphasizes leadership, mentorship, public speaking, teamwork, and community organization.
+        </p>
+
+        <p>
+        At the core of his philosophy is the belief that creativity and innovation should not only produce art but also create opportunities and empower communities. His projects reflect a vision where technology, culture, and entrepreneurship come together to build meaningful impact.
+        </p>
+
+        <p>
+        Guided by the bold motto displayed on his platform — “If You’re Not Loud, You’re Not Allowed.” — Ngumo embraces fearless creativity, expressive ideas, and forward-thinking innovation as tools for shaping the future.
+        </p>
+
+    </div>
+</div>
+
+<script>
+// Fade-in effect on scroll
+window.addEventListener('scroll', function(){
+    const wrapper = document.querySelector('.about-wrapper');
+    const top = wrapper.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+    if(top < windowHeight - 100){
+        wrapper.classList.add('visible');
+    }
+});
+</script>
+
+</section>
+    <!-- Core Identity -->
+    <section id="core-identity">
+      <h2><i class="fas fa-user"id="Core Identity"
+        ></i>Core Identity</h2>
+
+      Origin/History:
+      <p>Raised in Dallas, Embu in a farming and community-focused environment, I developed discipline, resilience, and resourcefulness. Early mornings of chores, school, and community involvement taught me responsibility, patience, and teamwork. Exposure to family entrepreneurship inspired creativity and problem-solving, while cultural traditions instilled pride, identity, and community values.</p>
+      
+      <video class="section-video" autoplay muted loop playsinline>
+  <source src="assets/mine.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+<p>Key Experiences That Shaped Me Growing Up in Dallas, Embu</p>
+      <h3>Early Mornings & Hard Work</h3>
+      <p>Daily chores like milking cows, feeding livestock, and gardening taught me that consistent effort leads to success. These routines built reliability, self-discipline, and responsibility, forming the foundation for all later endeavors.</p>
+
+      <h3>The Rhythm of Farming Life</h3>
+      <p>Observing crops grow and livestock thrive showed me patience, planning, and perseverance. These lessons translate into how I approach long-term goals in creative, professional, and personal projects.</p>
+
+      <h3>Community & Social Bonds</h3>
+      <p>Helping neighbors, attending church, and playing football reinforced teamwork, empathy, and reciprocity. I value building strong, supportive networks that empower both individuals and communities.</p>
+
+      <h3>Balancing School & Responsibility</h3>
+      <p>Managing schoolwork alongside family duties developed time management, resilience, and the ability to perform under pressure. Learning extends beyond books; life experiences are equally formative.</p>
+
+      <h3>Entrepreneurship & Creativity</h3>
+      <p>Family and community businesses inspired innovation, initiative, and problem-solving. I actively seek opportunities to create value and implement solutions that are practical and impactful.</p>
+
+      <h3>Cultural Traditions & Food</h3>
+      <p>Sharing meals and preserving heritage strengthened my identity, pride, and understanding of social values, which guide my interactions and leadership style.</p>
+
+      <h3>Adaptability & Resourcefulness</h3>
+      <p>Limited resources and challenges in daily life taught me to be flexible, creative, and solution-oriented. These skills are applied in farming, IT, creative projects, tattoo artistry, and entrepreneurship.</p>
+    With pain comes strength
+    </section>
+
+ <!-- Education -->
+<section id="education">
+  <h2><i class="fas fa-graduation-cap"></i>Education</h2>
+  <ul>
+    <li>
+      <strong>Primary: St. Michael Primary School</strong><br>
+      <em>Lessons & Discipline:</em> Developed foundational discipline through consistent attendance, completing assignments, and participating in school activities. Learned responsibility, time management, teamwork, and respect for teachers and peers. Cultivated curiosity and a love for learning that guided future academic and personal growth.
+    </li>
+    <li>
+      <strong>High School: Embu Urban Integrated Secondary School</strong><br>
+      <em>Lessons & Discipline:</em> Strengthened resilience and perseverance by balancing academics, extracurricular activities, and family responsibilities. Developed leadership skills through clubs, sports, and group projects. Learned critical thinking, problem-solving, and self-motivation—understanding that consistent effort produces results.
+    </li>
+    <li>
+      <strong>University: Jomo Kenyatta University of Agriculture and Technology</strong><br>
+      <em>Lessons & Discipline:</em> Advanced technical and creative knowledge in Technology, Agriculture, Creative Arts, and IT. Learned project management, independent research, and professional collaboration. Developed discipline in handling deadlines, multitasking across creative and technical projects, and applying theoretical knowledge to practical solutions.
+    </li>
+  </ul>
+  
+</section>
+
+    <!-- Professional Experience -->
+   <section id="experience">
+      <h2><i class="fas fa-briefcase"></i>Professional Experience</h2>
+      <ul>
+        <li><strong>Exquisite Tatu Nation</strong> – Tech company<h5>{DATE WORKED (currently)}</h5><p>: create custom tattoos, lead creative projects, mentor staff, coordinate media, fashion, Information Technology, and events</p></li>
+        <li><strong>Intenzionale Fashion</strong> – Clothing line <h5>{DATE WORKED (1 years)}</h5><p>: oversee design, production, marketing, inventory, e-commerce, and creative direction</p></li>
+        <li><strong>Audio Mix Sound Center</strong> – Sound and events<h5>{DATE WORKED (1 years)}</h5> <p>: manage sound systems, coordinate live events, implement technical solutions, train staff</p></li>
+        <li><strong>Ujenzi Art Shop</strong> – Creative projects<h5>{DATE WORKED (1 years)}</h5><p>: conduct workshops, guide clients, manage creative & digital projects</p></li>
+        <li><strong>GKM Farming and Produce</strong> – Agriculture <h5>{DATE WORKED (1 years)}</h5><p>: plan crops, harvest, care for livestock, manage produce sales</p></li>
+        <li><strong>Mwanzi Lisi Building and Construction</strong> – Construction<h5>{DATE WORKED (1 years)}</h5><p>: assist in project logistics, coordinate teams, support operations</p></li>
+      </ul>
+      <section id="projects">
+<h2><i class="fas fa-rocket"></i>Projects</h2>
+
+<div class="project-card">
+<h3>Exquisite Tatu Nation</h3>
+<p>Creative tattoo studio blending art, culture and digital branding Building company systems.</p>
+</div>
+
+<div class="project-card">
+<h3>Intenzionale Fashion</h3>
+<p>Fashion brand focused on creative streetwear and artistic identity.</p>
+</div>
+
+<div class="project-card">
+<h3>Audio Mix Sound Center</h3>
+<p>Professional sound engineering and event production.</p>
+</div>
+<style>
+  .project-card{
+background:#fafafa;
+padding:20px;
+margin:15px 0;
+border-radius:10px;
+border-left:5px solid pink;
+transition:0.3s;
+}
+
+.project-card:hover{
+transform:translateY(-5px);
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+</style>
+</section>
+    </section>
+
+    <!-- Skills & Strengths -->
+  <section id="skills">
+      <h2><i class="fas fa-lightbulb"></i>Skills & Strengths</h2>
+      <p class="skills">
+        <span>Drawing</span><span>Tattooing</span><span>Graphics</span><span>Video Creation</span>
+        <span>Songwriting</span><span>Fashion Design</span><span>Audio Engineering</span><span> Information Technology</span>
+        <span>Event Production</span><span>Farming Techniques</span><span>Leadership</span><span>Mentoring</span>
+        <span>Public Speaking</span><span>Problem Solving</span><span>Community Organization</span><span>Teamwork</span>
+        <span>Critical Thinking</span><span>Project Management</span>
+      </p>
+      <ul>
+  <li>
+    <strong>Technical & Creative Skills:</strong><br>
+    <em>Information Technology:</em> Use software and digital platforms for content creation, project management, and technical problem-solving.<br>
+    <em>Tattoo Artistry:</em> Design and execute custom tattoos, consult clients, maintain hygiene, and lead creative tattoo projects.<br>
+    <em>Graphics:</em> Create logos, digital art, and promotional visuals for fashion, events, and media campaigns.<br>
+    <em>Video Content:</em> Shoot, edit, and produce professional videos for social media, events, and tutorials.<br>
+    <em>Fashion Design:</em> Conceptualize, design, and oversee clothing line production, styling, marketing, and e-commerce.<br>
+    <em>Audio Engineering:</em> Manage sound systems, record and mix audio, coordinate live events, and troubleshoot technical issues.
+  </li>
+  <li>
+    <strong>Soft Skills:</strong><br>
+    <em>Leadership:</em> Guide teams and projects, delegate responsibilities, and motivate colleagues and mentees.<br>
+    <em>Mentoring:</em> Coach youth and team members in creative, technical, and professional skills.<br>
+    <em>Public Speaking:</em> Deliver talks, presentations, and motivational sessions for peers, clients, and community members.<br>
+    <em>Problem-Solving:</em> Identify challenges and implement innovative, practical solutions across projects and community initiatives.<br>
+    <em>Community Organization:</em> Plan and execute programs, workshops, and initiatives that benefit youth and local networks.
+  </li>
+  <li>
+    <strong>Interpersonal Skills:</strong><br>
+    <em>Communication:</em> Effectively convey ideas and instructions across teams, clients, and community participants.<br>
+    <em>Teamwork:</em> Collaborate efficiently with colleagues and community members to achieve shared goals.<br>
+    <em>Conflict Resolution:</em> Address disagreements calmly and constructively, maintaining harmony and productivity.
+  </li>
+</ul>
+
+ <section id="videos-section">
+  <h2><i class="fas fa-video"></i>skills</h2>
+  <div class="video-row">
+    <video class="section-video" autoplay muted loop playsinline>
+      <source src="assets/pikini.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <video class="section-video" autoplay muted loop playsinline>
+      <source src="assets/msee.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <video class="section-video" autoplay muted loop playsinline>
+      <source src="assets/mine.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+      <video class="section-video" autoplay muted loop playsinline>
+      <source src="assets/buda.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
+<style>
+
+.video-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.section-video {
+  width: 250px;
+  height: 160px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.section-video:hover {
+  transform: scale(1.05);
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .section-video {
+    width: 45%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  .section-video {
+    width: 100%;
+  }
+}
+</style>
+
+    </section>
+
+    <!-- Values & Beliefs -->
+   <section id="values">
+      <h2><i class="fas fa-heart"></i>Values & Beliefs</h2>
+      <ul>
+        <li><strong>Discipline & Responsibility:</strong> Daily consistency builds success and reliability.</li>
+        <li><strong>Perseverance & Patience:</strong> Commit to long-term goals; overcome challenges with persistence.</li>
+        <li><strong>Faith & Spiritual Guidance:</strong> Decisions guided by God and Harvest Family principles.</li>
+        <li><strong>Service & Compassion:</strong> Mentorship and community impact drive meaningful outcomes.</li>
+        <li><strong>Community & Teamwork:</strong> Collaboration fosters shared success.</li>
+        <li><strong>Creativity & Initiative:</strong> Innovation and proactive problem-solving create value.</li>
+        <li><strong>Adaptability & Resourcefulness:</strong> Flexibility in challenges maximizes results.</li>
+        <li><strong>Cultural Pride & Identity:</strong> Heritage and traditions guide authenticity and purpose.</li>
+      </ul>
+      <p><strong>Personality Traits:</strong> Responsible, empathetic, creative, resilient, reflective, collaborative.</p>
+    </section>
+
+    <!-- Audience & Community -->
+<section id="community">
+  <h2><i class="fas fa-users"></i>Audience & Community</h2>
+
+  <p>
+    I engage with a diverse audience including <strong>family, peers, students, creative collaborators, tech learners, community members.</strong>. 
+    My focus is on sharing knowledge, providing guidance, and inspiring growth through practical, creative, and faith-driven support.
+  </p>
+
+  <ul>
+    <li>
+      <strong>Audience Identification:</strong> I connect with individuals and groups who benefit from mentorship, leadership guidance, creative collaboration, and technical expertise. 
+      This includes students developing technical or creative skills, youth seeking leadership direction, peers in collaborative projects, and community members pursuing practical solutions.
+    </li>
+    <li>
+      <strong>Needs & Value Provided:</strong> I provide <strong>mentorship, leadership coaching, creative and technical solutions, and inspiration through faith and service</strong>. 
+      For example, I teach IT, video production, or audio engineering in workshops, guide fashion, tattooing, and graphic projects, and help peers develop problem-solving, project management, and leadership skills.
+    </li>
+    <li>
+      <strong>Engagement & Relationship Style:</strong> I maintain a <strong>supportive, collaborative, approachable, and service-oriented</strong> approach. 
+      I actively listen, encourage participation, and provide constructive guidance. Whether leading creative projects, mentoring youth, or coordinating community programs, I focus on building trust, fostering teamwork, and empowering others to succeed.
+    </li>
+  </ul>
+
+  <p>
+    By combining mentorship, creativity, and practical solutions, I cultivate a community that values learning, innovation, service, and personal growth. 
+    My audience benefits from actionable guidance, skill development, and inspiration that create long-term personal, professional, and creative impact.
+  </p>
+</section>
+
+
+    <!-- Future Goals -->
+<section id="destinations">
+      <h2><i class="fas fa-rocket"></i>Destinations</h2>
+      <h4>Short-Term (6–12 months)</h4>
+      <ul>
+        <li>Strengthen Information Technology, creative, and leadership skills</li>
+        <li>Lead impactful projects in media, fashion, audio, tattooing, and technology</li>
+        <li>Expand mentorship and community engagement</li>
+        <li>Build strong professional & creative networks</li>
+      </ul>
+      <h4>Long-Term (5–10 years)</h4>
+      <ul>
+        <li>Expand mentorship and community engagement</li>
+        <li>Lead communities through faith, service, creativity, and technology</li>
+        <li>Establish sustainable ventures integrating media, fashion, agriculture, tattooing, IT, and community development</li>
+        <li>Become a role model for youth and emerging creatives</li>
+        <li>Continuous personal, spiritual, and professional growth</li>
+      </ul>
+    </section>
+
+ <!-- Hobbies & Interests -->
+<section id="hobbies">
+  <h2><i class="fas fa-star"></i> Hobbies & Interests</h2>
+  <div class="hobbies-grid">
+
+    <!-- Hobby Item -->
+      <div class="hobby-item">
+      <i class="fas fa-motorcycle hobby-icon"></i>
+      <h3>MotoGP</h3>
+      <p>Excites me with skill, speed, and technical mastery, inspiring focus and discipline.</p>
+       <video class="section-video" autoplay muted loop playsinline>
+        <source src="assets/motogp.mp4" type="video/mp4">
+      </video>
+    </div>
+
+
+    <div class="hobby-item">
+      <i class="fas fa-skating hobby-icon"></i>
+      <h3>Skateboarding</h3>
+      <p>Challenges my balance, creativity, and perseverance, giving me a sense of freedom and personal expression.</p>
+    </div>
+
+    <div class="hobby-item">
+      <i class="fas fa-bicycle hobby-icon"></i>
+      <h3>BMX Riding</h3>
+      <p>Excites me with speed, technical skills, and the thrill of mastering stunts and new challenges.</p>
+    </div>
+
+    <div class="hobby-item">
+      <i class="fas fa-fish hobby-icon"></i>
+      <h3>Fishing</h3>
+      <p>Allows me to relax, connect with nature, and practice patience while reflecting and clearing my mind.</p>
+    </div>
+
+    <div class="hobby-item">
+      <i class="fas fa-plane hobby-icon"></i>
+      <h3>Travelling Adventures</h3>
+      <p>Exploring new places, experiencing new cultures, and testing navigation and decision-making skills.</p>
+      <div id="travel-map" style="width:100%; height:250px; border-radius:12px; margin-top:10px;"></div>
+    </div>
+
+    <div class="hobby-item">
+      <i class="fas fa-pencil-alt hobby-icon"></i>
+      <h3>Drawing</h3>
+      <p>Lets me visually express ideas, concepts, and emotions, and supports creative projects like tattooing and graphics.</p>
+    </div>
+   <div class="hobby-item">
+      <i class="fas fa-video hobby-icon"></i>
+      <h3>Video Content Creation</h3>
+      <p>Allows me to tell stories, document experiences, and share knowledge creatively across platforms.</p>
+    </div>
+   
+
+    <div class="hobby-item">
+      <i class="fas fa-paint-brush hobby-icon"></i>
+      <h3>Graphics</h3>
+      <p>Communicate visually, craft digital designs, and bring ideas to life professionally.</p>
+    </div>
+
+  <div class="hobby-item">
+      <i class="fas fa-pen-nib hobby-icon"></i>
+      <h3>Tattooing</h3>
+      <p>Combines art, personal expression, and storytelling to create lasting, meaningful designs for others.</p>
+      <video class="section-video" autoplay muted loop playsinline>
+        <source src="assets/pikini.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="hobby-item">
+      <i class="fas fa-music hobby-icon"></i>
+      <h3>Songwriting</h3>
+      <p>Express emotions, inspire others, and explore creativity through music and lyrics.</p>
+    </div>
+
+    <div class="hobby-item">
+      <i class="fas fa-laptop hobby-icon"></i>
+      <h3>IT Projects</h3>
+      <p>Challenges me to solve problems, innovate, and apply technology for functional and creative solutions.</p>
+      <video class="section-video" autoplay muted loop playsinline>
+        <source src="assets/msee.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="hobby-item">
+      <i class="fas fa-tshirt hobby-icon"></i>
+      <h3>Fashion Design</h3>
+      <p>Combines creativity, culture, and practical artistry to craft unique, expressive styles.</p>
+    </div>
+
+
+      <div class="hobby-item">
+      <i class="fas fa-chart-line hobby-icon"></i>
+      <h3>Financial Markets</h3>
+      <p>Combines analysis, strategy, and decision-making, helping me understand global systems and investments.</p>
+      <video class="section-video" autoplay muted loop playsinline>
+        <source src="assets/buda.mp4" type="video/mp4">
+      </video>
+    </div>
+
+     <div class="hobby-item">
+      <i class="fas fa-swimmer hobby-icon"></i>
+      <h3>Swimming</h3>
+      <p>Keeps me physically fit, improves focus and endurance, and provides a calm, meditative space to recharge my mind.</p>
+    </div>
+
+ 
+  
+
+    <div class="hobby-item">
+      <i class="fas fa-lightbulb hobby-icon"></i>
+      <h3>Digital Innovation</h3>
+      <p>Inspires me to think creatively, implement solutions, and stay ahead in tech and creativity.</p>
+    </div>
+
+    <div class="hobby-item">
+      <i class="fas fa-microchip hobby-icon"></i>
+      <h3>Technology</h3>
+      <p>Drives innovation, problem-solving, and new ways to create, communicate, and improve life.</p>
+    </div>
+
+<div class="hobby-item">
+      <i class="fas fa-flag-checkered hobby-icon"></i>
+      <h3>Formula 1</h3>
+      <p>Enjoy strategy, precision, speed, and high-performance competition.</p>
+       <video class="section-video" autoplay muted loop playsinline>
+        <source src="assets/Fomur 1.mp4" type="video/mp4">
+      </video>
+    </div>
+    
+
+    <div class="hobby-item">
+      <i class="fas fa-golf-ball hobby-icon"></i>
+      <h3>Golf</h3>
+      <p>Combines focus, strategy, and patience. Helps relax, practice discipline, and enjoy precision outdoors.</p>
+    </div>
+
+    <div class="hobby-item">
+      <i class="fas fa-users hobby-icon"></i>
+      <h3>Team Building</h3>
+      <p>Strengthens collaboration, leadership, and communication skills while fostering trust and motivation within a group.</p>
+    </div>
+
+  </div>
+
+  <style>
+    /* Section Styling */
+    #hobbies {
+      background:#ffffff;
+      color:#fff;
+      font-family:'Poppins', sans-serif;
+      border-radius:12px;
+      padding:40px 30px;
+      margin-bottom:40px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .section-title {
+      font-size:36px;
+      font-weight:600;
+      color:#ffcc00;
+      text-align:center;
+      margin-bottom:30px;
+    }
+
+    .hobbies-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+      gap:25px;
+    }
+
+    .hobby-item {
+      background:#1a1a1a;
+      padding:20px;
+      border-radius:12px;
+      box-shadow:0 5px 10px rgba(0,0,0,0.05);
+      text-align:center;
+      transition:transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hobby-item:hover {
+      transform:translateY(-5px);
+      box-shadow:0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .hobby-icon {
+      font-size:36px;
+      color:#ffcc00;
+      margin-bottom:10px;
+    }
+
+    .hobby-item h3 {
+      font-size:20px;
+      margin-bottom:10px;
+      color:#fff;
+      font-family:'Times New Roman', Times, serif ;
+    }
+
+    .hobby-item p {
+      font-size:15px;
+      color:#d1d1d1;
+      line-height:1.5;
+    }
+
+    .section-video {
+      width:100%;
+      margin-top:10px;
+      border-radius:12px;
+    }
+
+    @media(max-width:768px){
+      #hobbies {
+        padding:30px 6%;
+      }
+      .section-title {
+        font-size:28px;
+      }
+    }
+  </style>
+
+  <script>
+    const map = L.map('travel-map').setView([0, 0], 2);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    const destinations = [
+      {name: "Nairobi, Kenya", coords: [-1.2921, 36.8219]},
+      {name: "Dallas, Embu", coords: [-0.5167, 37.4500]},
+      {name: "Tokyo, Japan", coords: [35.6762, 139.6503]}
+    ];
+
+    destinations.forEach(d => {
+      L.marker(d.coords).addTo(map)
+        .bindPopup(`<b>${d.name}</b>`);
+    });
+  </script>
+
+</section>
+
+
+<section id="mission">
+<h2><i class="fas fa-cross"></i>Mission</h2>
+
+<blockquote>
+“I am the way, the truth, and the life.”  
+<br>— John 14:6
+</blockquote>
+
+<p>
+My work is guided by faith, purpose and service. 
+Through creativity, technology and entrepreneurship, 
+I aim to inspire and uplift communities.
+</p>
+<section id="journey">
+<h2><i class="fas fa-route"></i>My Journey</h2>
+
+<ul class="timeline">
+
+<li>
+<span>2002</span>
+<p>Born in Embu, Kenya</p>
+</li>
+
+<li>
+<span>2010–2016</span>
+<p>Primary School – St Michael</p>
+</li>
+
+<li>
+<span>2017–2020</span>
+<p>High School – Embu Urban Integrated</p>
+</li>
+
+<li>
+<span>2021–Present</span>
+<p>University – JKUAT</p>
+</li>
+
+</ul>
+
+</section>
+</section>
+
+
+</div>
+
+ 
+<footer>
+  <div class="footer-container">
+    
+
+    <!-- About -->
+    <div class="footer-section">
+      <h2>Ngumo Mwangi</h2>
+      <p>Creative & Busines developer building digital experiences and innovative solutions.</p>
+      <p class="footer-slogan">If You’re Not Loud, You’re Not Allowed.</p>
+    </div>
+
+    <!-- Navigation -->
+    <div class="footer-section">
+      <h3>Navigation</h3>
+      <a href="#core-identity">Core Identity</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#values">Values</a>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-section" id="footer">
+      <h3>Contact</h3>
+      <p>Email:</p>
+      <a href="mailto:ngumowilfredmwangi@gmail.com">ngumowilfredmwangi@gmail.com</a>
+      <p>Nairobi, Kenya</p>
+      
+
+      <div class="footer-social">
+        <a href="https://github.com/Ngumo-Mwangi"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/ngumo-mwangi/"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/Ngumo_Mwangi"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:ngumowilfredmwangi@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Ngumo Mwangi | All Rights Reserved</p>
+    <div id="chatbot">
+  <div class="chatbot-header">Ask Me Anything 🤖</div>
+  <div class="chatbot-messages"></div>
+  <input type="text" placeholder="Type your question..." id="chatbot-input">
+</div>
+<button id="chatbot-toggle">💬</button>
+<style>
+  #chatbot {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 320px;
+  max-width: 90%;
+  background: rgba(255,255,255,0.95);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+  z-index: 99999;
+  backdrop-filter: blur(10px);
+ 
+}
+
+.chatbot-header {
+  background: pink;
+  color: #000;
+  padding: 12px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.chatbot-messages {
+  padding: 10px;
+  height: 250px;
+  overflow-y: auto;
+}
+
+#chatbot-input {
+  border: none;
+  border-top: 1px solid #000000;
+  padding: 10px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#chatbot-toggle {
+  position: fixed;
+  bottom: 5px;
+  right: 20px;
+  background: pink;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+#chatbot-toggle:hover {
+  transform: scale(1.2);
+}
+</style>
+<script>
+const chatbot = document.getElementById('chatbot');
+const toggle = document.getElementById('chatbot-toggle');
+const input = document.getElementById('chatbot-input');
+const messages = document.querySelector('.chatbot-messages');
+
+toggle.addEventListener('click', () => {
+  chatbot.style.display = chatbot.style.display === 'flex' ? 'none' : 'flex';
+  chatbot.style.flexDirection = 'column';
+});
+
+function getBotResponse(question){
+
+  question = question.toLowerCase();
+
+  if(question.includes("skills")){
+    return "Ngumo Mwangi has skills in Drawing, Tattooing, Graphics, Video Creation, Songwriting, Fashion Design, Audio Engineering, IT, Event Production and Farming.";
+  }
+
+  if(question.includes("projects")){
+    return "Current projects include Exquisite Tatu Nation, Intenzionale Fashion, and Audio Mix Sound Center.";
+  }
+
+  if(question.includes("education")){
+    return "Education includes St. Michael Primary School, Embu Urban Integrated Secondary School, and Jomo Kenyatta University of Agriculture and Technology.";
+  }
+
+  if(question.includes("experience") || question.includes("work")){
+    return "Ngumo has worked with Exquisite Tatu Nation, Intenzionale Fashion, Audio Mix Sound Center, Ujenzi Art Shop, GKM Farming, and Mwanzi Lisi Construction.";
+  }
+
+  if(question.includes("hobbies")){
+    return "Hobbies include art, tattooing, music creation, fashion design, technology exploration and farming.";
+  }
+
+  if(question.includes("who") || question.includes("about")){
+    return "Ngumo Mwangi is a Creative Technologist, Entrepreneur, Artist and Innovator from Embu, Kenya.";
+  }
+
+  if(question.includes("contact")){
+    return "You can contact Ngumo through LinkedIn, Instagram, GitHub or other social platforms listed on the site.";
+  }
+
+  return "Hello! I'm Ngumo Mwangi's assistant 🤖. Ask me about skills, projects, education, experience or hobbies.";
+}
+
+input.addEventListener('keypress', (e) => {
+
+  if(e.key === 'Enter' && input.value.trim() !== ''){
+
+    const userText = input.value;
+
+    const userMsg = document.createElement('div');
+    userMsg.textContent = userText;
+    userMsg.style.textAlign = 'right';
+    userMsg.style.color = 'black';
+    messages.appendChild(userMsg);
+
+    const botMsg = document.createElement('div');
+    botMsg.textContent = "Typing...";
+    botMsg.style.color = 'red';
+    messages.appendChild(botMsg);
+
+    messages.scrollTop = messages.scrollHeight;
+
+    setTimeout(() => {
+      botMsg.textContent = getBotResponse(userText);
+      messages.scrollTop = messages.scrollHeight;
+    }, 700);
+
+    input.value = '';
+  }
+
+});
+</script>
+    <audio id="bg-music" loop>
+  <source src="assets/beat.mp3" type="audio/mp3">
+</audio>
+<button id="music-toggle">🎵</button>
+<style>
+  #music-toggle{
+  position: fixed;
+  bottom: 200px;
+  right: 20px;
+  background:pink;
+  border:none;
+  border-radius:50%;
+  width:50px;
+  height:50px;
+  font-size:24px;
+  cursor:pointer;
+  z-index:9999;
+}
+</style>
+<script>
+  const music = document.getElementById('bg-music');
+const musicBtn = document.getElementById('music-toggle');
+
+musicBtn.addEventListener('click', () => {
+  if(music.paused){
+    music.play();
+    musicBtn.textContent = "🔊";
+  } else {
+    music.pause();
+    musicBtn.textContent = "🎵";
+  }
+});
+</script>
+    <button onclick="scrollToTop()" class="top-button">HOME</button>
+  </div>
+</footer>
+<style>
+    /* ===== ELITE FOOTER ===== */
+
+footer{
+  background: linear-gradient(135deg,#0a0a0a,#1c1c1c);
+  color:#fff;
+  padding:60px 20px 30px;
+  margin-top:60px;
+}
+
+.footer-section h2{
+  font-size:26px;
+  margin-bottom:10px;
+}
+
+.footer-section h3{
+  margin-bottom:12px;
+  color:rgb(255, 0, 43);
+}
+
+.footer-section a{
+  color:#ccc;
+  text-decoration:none;
+  margin:5px 0;
+  transition:0.3s;
+}
+
+.footer-section a:hover{
+  color:pink;
+  transform:translateX(6px);
+}
+
+.footer-slogan{
+  margin-top:10px;
+  font-style:italic;
+  color:pink;
+}
+
+/* Social Icons */
+
+.footer-social{
+  margin-top:12px;
+}
+
+.footer-social a{
+  color:white;
+  font-size:22px;
+  margin-right:12px;
+  transition:0.3s;
+}
+
+.footer-social a:hover{
+  color:pink;
+  transform:scale(1.3) rotate(5deg);
+}
+
+/* Bottom */
+
+.footer-bottom{
+  border-top:1px solid #333;
+  margin-top:35px;
+  padding-top:15px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+/* Top Button */
+
+.top-button{
+  background:pink;
+  border:none;
+  padding:10px 16px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.top-button:hover{
+  background:#ff2e8c;
+  transform:translateY(-2px);
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.footer-container{
+  flex-direction:column;
+  text-align:center;
+}
+
+.footer-section a:hover{
+  transform:none;
+}
+
+.footer-bottom{
+  flex-direction:column;
+  gap:10px;
+}
+
+}
+
+.footer-container{
+  max-width:1100px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:40px;
+}
+
+.footer-section{
+  flex:1;
+  min-width:230px;
+  display:flex;
+  flex-direction:column;
+}
+
+.footer-section h2{
+  font-size:26px;
+  margin-bottom:10px;
+}
+
+.footer-section h3{
+  margin-bottom:12px;
+}
+
+.footer-section a{
+  color:#ccc;
+  text-decoration:none;
+  margin:5px 0;
+  transition:0.3s;
+}
+
+.footer-section a:hover{
+  color:#ff4fa3;
+  transform:translateX(6px);
+}
+
+.footer-slogan{
+  margin-top:10px;
+  font-style:italic;
+  color:#ff4fa3;
+}
+
+/* Social Icons */
+
+.footer-social{
+  margin-top:12px;
+}
+
+.footer-social a{
+  color:white;
+  font-size:22px;
+  margin-right:12px;
+  transition:0.3s;
+}
+
+.footer-social a:hover{
+  color:#ff4fa3;
+  transform:scale(1.3) rotate(5deg);
+}
+
+/* Bottom */
+
+.footer-bottom{
+  border-top:1px solid #333;
+  margin-top:35px;
+  padding-top:15px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+/* Top Button */
+
+.top-button{
+  background:#ff4fa3;
+  border:none;
+  padding:10px 16px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.top-button:hover{
+  background:#ff2e8c;
+  transform:translateY(-2px);
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.footer-container{
+  flex-direction:column;
+  text-align:center;
+}
+
+.footer-section a:hover{
+  transform:none;
+}
+
+.footer-bottom{
+  flex-direction:column;
+  gap:10px;
+}
+
+}
+</style>
+<script>
+function scrollToTop(){
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+}
+</script>
+
+
+<canvas id="confetti-canvas"></canvas>
+<div id="celebration-container"></div>
+<div id="birthday-title"></div> <!-- Empty by default -->
+
+<!-- Balloon pop sound -->
+<audio id="pop-sound" src="https://www.soundjay.com/button/sounds/button-16.mp3"></audio>
+
+<style>
+#confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 99999;
+}
+
+#celebration-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10000;
+}
+
+#birthday-title {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 4rem;
+  font-weight: bold;
+  color: #ff69b4;
+  text-shadow: 2px 2px 8px gold;
+  opacity: 0; /* Hidden by default */
+  z-index: 10001;
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+.balloon, .star {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.balloon {
+  width: 40px;
+  height: 60px;
+  border-radius: 50% 50% 50% 50%;
+}
+
+.star {
+  width: 15px;
+  height: 15px;
+  background: yellow;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+</style>
+
+<script>
+// Check user's local date
+const today = new Date();
+const localMonth = today.getMonth(); // 0 = Jan
+const localDay = today.getDate();
+const celebrationMonth = 3; // April
+const celebrationDay = 29;
+
+// Run everything only on April 29th
+if(localMonth === celebrationMonth && localDay === celebrationDay){
+  launchConfetti();
+  launchBalloonsAndStars();
+  showBirthdayTitle();
+}
+
+// Birthday title
+function showBirthdayTitle(){
+  const title = document.getElementById('birthday-title');
+  title.textContent = "🎉 It`s Ngumo`s Birthday! live to blow many candles 🎉";
+
+  title.style.opacity = '1';
+  title.style.transform = 'translateX(-50%) translateY(0)';
+
+  setTimeout(()=>{
+    title.style.opacity = '0';
+    title.style.transform = 'translateX(-50%) translateY(-20px)';
+  }, 10000);
+
+  setTimeout(()=>title.remove(), 62000);
+}
+
+// Confetti
+function launchConfetti() {
+  const canvas = document.getElementById('confetti-canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const confettiCount = 150;
+  const confetti = [];
+  for(let i=0;i<confettiCount;i++){
+    confetti.push({
+      x: Math.random()*canvas.width,
+      y: Math.random()*-canvas.height,
+      r: Math.random()*6+4,
+      d: Math.random()*confettiCount,
+      color: `hsl(${Math.random()*360},100%,50%)`,
+      tilt: Math.random()*10-10,
+      tiltAngleIncremental: Math.random()*0.07+0.05,
+      tiltAngle:0
+    });
+  }
+
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    confetti.forEach(c=>{
+      ctx.beginPath();
+      ctx.lineWidth=c.r/2;
+      ctx.strokeStyle=c.color;
+      ctx.moveTo(c.x+c.tilt+c.r/4,c.y);
+      ctx.lineTo(c.x+c.tilt,c.y+c.tilt+c.r/4);
+      ctx.stroke();
+    });
+    update();
+  }
+
+  function update(){
+    confetti.forEach(c=>{
+      c.tiltAngle+=c.tiltAngleIncremental;
+      c.y += (Math.cos(c.d)+3+c.r/2)/2;
+      c.x += Math.sin(c.d)/2; 
+      c.tilt = Math.sin(c.tiltAngle)*15;
+      if(c.y>canvas.height){
+        c.x=Math.random()*canvas.width;
+        c.y=-20;
+        c.tilt=Math.random()*10-10;
+      }
+    });
+  }
+
+  function animate(){
+    draw();
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+  setTimeout(()=>canvas.remove(),10000);
+}
+
+// Balloons & stars with sway
+function launchBalloonsAndStars(){
+  const container = document.getElementById('celebration-container');
+  const colors = ['red','blue','green','purple','orange','pink'];
+
+  for(let i=0;i<15;i++){
+    const balloon = document.createElement('div');
+    balloon.classList.add('balloon');
+    const color1 = colors[Math.floor(Math.random()*colors.length)];
+    const color2 = colors[Math.floor(Math.random()*colors.length)];
+    balloon.style.background = `radial-gradient(circle at 30% 30%, ${color1}, dark${color2})`;
+    balloon.style.left = Math.random()*100+'vw';
+
+    const riseDistance = window.innerHeight + 100; // vertical rise distance
+    const swayAmplitude = Math.random()*30 + 20; // side-to-side sway
+    const swayDuration = Math.random()*2000 + 2000;
+
+    // Keyframes for combined rise + sway
+    const keyframes = [
+      { transform: `translate(0px, ${riseDistance}px)`, opacity: 0 },
+      { transform: `translate(${swayAmplitude}px, -50px)`, opacity: 1 }
+    ];
+
+    balloon.animate(keyframes, {
+      duration: 10000,
+      easing: 'ease-in-out',
+      iterations: 1,
+      fill: 'forwards'
+    });
+
+    // Continuous sway using CSS animation
+    const swayStyle = document.createElement('style');
+    const swayName = `sway-${i}`;
+    swayStyle.innerHTML = `
+      @keyframes ${swayName} {
+        0% { transform: translateX(0); }
+        50% { transform: translateX(${swayAmplitude}px); }
+        100% { transform: translateX(0); }
+      }
+      .balloon:nth-child(${i+1}) {
+        animation: ${swayName} ${swayDuration}ms ease-in-out infinite;
+      }
+    `;
+    document.head.appendChild(swayStyle);
+
+    container.appendChild(balloon);
+  }
+
+  // Stars
+  for(let i=0;i<15;i++){
+    const star = document.createElement('div');
+    star.classList.add('star');
+    star.style.left = Math.random()*100+'vw';
+    star.style.animation = `twinkle ${3+Math.random()*2}s ease-in-out infinite alternate`;
+    star.style.animationDelay = `${Math.random()*3}s`;
+    container.appendChild(star);
+  }
+
+  const style = document.createElement('style');
+  style.innerHTML = `
+    @keyframes twinkle {
+      0% {opacity:0;}
+      50% {opacity:1;}
+      100% {opacity:0;}
+    }
+  `;
+  document.head.appendChild(style);
+
+  setTimeout(()=>container.remove(),10000);
+}
+
+// Responsive canvas
+window.addEventListener('resize', () => {
+  const canvas = document.getElementById('confetti-canvas');
+  if(canvas){
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+});
+</script>
+
+
+</body>
+</html>
