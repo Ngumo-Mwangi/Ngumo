@@ -206,7 +206,7 @@
   overflow-x: auto;
   scrollbar-width: none;
   border-radius: 12px; /* optional for soft edges */
-  margin-bottom: 20px; /* spacing from content */
+  margin-bottom: 10px; /* spacing from content */
   transition: all .35s ease;
 }
 
@@ -500,8 +500,12 @@ document.addEventListener("DOMContentLoaded", function () {
           font-family: 'Poppins', sans-serif;
           border-radius: 12px;
           margin-bottom: 40px;
-          padding: 40px 30px;
           box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom:40px;
+      padding:25px 30px;
+      border-radius:12px;
+      box-shadow:0 5px 10px rgba(0,0,0,0.08);
+          
       }
 
       .about-wrapper {
@@ -514,6 +518,9 @@ document.addEventListener("DOMContentLoaded", function () {
           opacity: 0;
           transform: translateY(30px);
           transition: all 1s ease-out;
+          padding:25px 30px;
+      border-radius:12px;
+      box-shadow:0 5px 10px rgba(0,0,0,0.08);
       }
 
       .about-wrapper.visible {
