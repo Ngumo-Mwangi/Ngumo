@@ -123,49 +123,7 @@
     }
 
     
-    /* ================= FLOATING SOCIAL ================= */
-    .floating-social{
-      position: fixed;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%) translateX(-80px);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.5s ease, transform 0.5s ease;
-      z-index: 9999;
-    }
-    .floating-social.show{
-      opacity:1;
-      pointer-events:auto;
-      transform:translateY(-50%) translateX(12px);
-    }
-    .floating-social a{
-      width: 52px;
-      height: 52px;
-      background:#222;
-      color:#fff;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-decoration:none;
-      font-size:22px;
-      transition:transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-    }
-    .floating-social a:hover{transform:scale(1.25) rotate(3deg); box-shadow:0 8px 20px rgba(0,0,0,0.35);}
-    .floating-social a.linkedin:hover { background: #0a66c2; }
-    .floating-social a.instagram:hover { background: linear-gradient(45deg,#f58529,#dd2a7b,#8134af); }
-    .floating-social a.twitter:hover { background: #1da1f2; }
-    .floating-social a.github:hover { background: #333; box-shadow:0 0 12px #fff; }
-    .floating-social a.facebook:hover { background: #1877f2; }
-    .floating-social a.tiktok:hover { background: #000; box-shadow:0 0 10px #69C9D0; }
-    .floating-social a.youtube:hover { background: #FF0000; }
-    .floating-social a.snapchat:hover { background:#FFFC00; color:#000; }
-    .floating-social a.telegram:hover { background:#229ED9; }
-    .floating-social a.pinterest:hover { background:#FF0000; }
+   
 
     /* ================= SECTIONS ================= */
     .container{
@@ -297,18 +255,153 @@
   }
 }
 </style> 
-<!--socials-->
+<!-- Floating Social -->
 <div class="floating-social">
-  <a href="https://www.linkedin.com/in/ngumo-mwangi/" class="linkedin"><i class="fab fa-linkedin"></i></a>
-  <a href="https://www.instagram.com/Ngumo_Mwangi" class="instagram"><i class="fab fa-instagram"></i></a>
-  <a href="https://twitter.com/Ngumo_Mwangii" class="twitter"><i class="fab fa-twitter"></i></a>
-  <a href="https://github.com/Ngumo-Mwangi" class="github"><i class="fab fa-github"></i></a>
-  <a href="https://www.facebook.com/NgumoMwangi" class="facebook"><i class="fab fa-facebook"></i></a>
-  <a href="https://www.tiktok.com/@Ngumo_Mwangi" class="tiktok"><i class="fab fa-tiktok"></i></a>
-  <a href="https://www.youtube.com/@Ngumo_Mwangi" class="youtube"><i class="fab fa-youtube"></i></a>
-  <a href="https://www.snapchat.com/add/Ngumo_Mwangii" class="snapchat"><i class="fab fa-snapchat"></i></a>
-  <a href="https://t.me/Ngumo_Mwangi" class="telegram"><i class="fab fa-telegram"></i></a>
-  <a href="https://www.pinterest.com/Ngumo_Mwangi" class="pinterest"><i class="fab fa-pinterest"></i></a>
+
+<a href="https://www.linkedin.com/in/ngumo-mwangi/" class="linkedin"><i class="fab fa-linkedin"></i></a>
+<a href="https://www.instagram.com/Ngumo_Mwangi" class="instagram"><i class="fab fa-instagram"></i></a>
+<a href="https://twitter.com/Ngumo_Mwangii" class="twitter"><i class="fab fa-twitter"></i></a>
+<a href="https://github.com/Ngumo-Mwangi" class="github"><i class="fab fa-github"></i></a>
+<a href="https://www.facebook.com/NgumoMwangi" class="facebook"><i class="fab fa-facebook"></i></a>
+<a href="https://www.tiktok.com/@Ngumo_Mwangi" class="tiktok"><i class="fab fa-tiktok"></i></a>
+<a href="https://www.youtube.com/@Ngumo_Mwangi" class="youtube"><i class="fab fa-youtube"></i></a>
+<a href="https://www.snapchat.com/add/Ngumo_Mwangii" class="snapchat"><i class="fab fa-snapchat"></i></a>
+<a href="https://t.me/Ngumo_Mwangi" class="telegram"><i class="fab fa-telegram"></i></a>
+<a href="https://www.pinterest.com/Ngumo_Mwangi" class="pinterest"><i class="fab fa-pinterest"></i></a>
+
+<style>
+
+/* ===== FLOATING SOCIAL BASE ===== */
+
+.floating-social{
+position:fixed;
+top:50%;
+left:0;
+transform:translateY(-50%) translateX(-80px);
+display:flex;
+flex-direction:column;
+gap:10px;
+opacity:0;
+pointer-events:none;
+transition:opacity .5s ease, transform .5s ease;
+z-index:9999;
+}
+
+.floating-social.show{
+opacity:1;
+pointer-events:auto;
+transform:translateY(-50%) translateX(12px);
+}
+
+/* ICON STYLE */
+
+.floating-social a{
+width:52px;
+height:52px;
+background:#222;
+color:#fff;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+font-size:22px;
+transition:transform .3s ease, background .3s ease, box-shadow .3s ease;
+}
+
+.floating-social a:hover{
+transform:scale(1.25) rotate(3deg);
+box-shadow:0 8px 20px rgba(0,0,0,.35);
+}
+
+/* BRAND COLORS */
+
+.linkedin:hover{background:#0a66c2;}
+.instagram:hover{background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af);}
+.twitter:hover{background:#1da1f2;}
+.github:hover{background:#333; box-shadow:0 0 12px #fff;}
+.facebook:hover{background:#1877f2;}
+.tiktok:hover{background:#000; box-shadow:0 0 10px #69C9D0;}
+.youtube:hover{background:#FF0000;}
+.snapchat:hover{background:#FFFC00; color:#000;}
+.telegram:hover{background:#229ED9;}
+.pinterest:hover{background:#E60023;}
+
+/* ===== TABLET ===== */
+
+@media(max-width:900px){
+
+.floating-social a{
+width:46px;
+height:46px;
+font-size:20px;
+}
+
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:600px){
+
+.floating-social{
+gap:8px;
+transform:translateY(-50%) translateX(-65px);
+}
+
+.floating-social.show{
+transform:translateY(-50%) translateX(8px);
+}
+
+.floating-social a{
+width:40px;
+height:40px;
+font-size:18px;
+}
+
+}
+
+</style>
+
+<script>
+
+/* FLOATING SOCIAL VISIBILITY */
+
+const floatingSocial=document.querySelector('.floating-social');
+
+function toggleFloatingSocial(){
+
+const scrollTop=window.scrollY;
+const windowHeight=window.innerHeight;
+
+const container=document.querySelector('.container');
+const footer=document.querySelector('footer');
+
+if(container && footer){
+
+const containerTop=container.offsetTop;
+const footerTop=footer.offsetTop;
+
+if(scrollTop+windowHeight/2>containerTop && scrollTop+windowHeight/2<footerTop){
+
+floatingSocial.classList.add('show');
+
+}else{
+
+floatingSocial.classList.remove('show');
+
+}
+
+}
+
+}
+
+window.addEventListener('scroll',toggleFloatingSocial);
+window.addEventListener('resize',toggleFloatingSocial);
+
+toggleFloatingSocial();
+
+</script>
+
 </div>
 
 <!-- SCROLL PROGRESS -->
@@ -359,24 +452,7 @@
   const nav=document.querySelector(".section-nav");
   window.addEventListener("scroll",()=>{if(window.scrollY>60){nav.classList.add("shrink");}else{nav.classList.remove("shrink");}});
 
-  // Floating social toggle
-  const floatingSocial=document.querySelector('.floating-social');
-  function toggleFloatingSocial(){
-    const scrollTop=window.scrollY;
-    const windowHeight=window.innerHeight;
-    const container=document.querySelector('.container');
-    const footer=document.querySelector('footer');
-    if(container && footer){
-      const containerTop=container.offsetTop;
-      const footerTop=footer.offsetTop;
-      if(scrollTop+windowHeight/2>containerTop && scrollTop+windowHeight/2<footerTop){
-        floatingSocial.classList.add('show');
-      } else {floatingSocial.classList.remove('show');}
-    }
-  }
-  window.addEventListener('scroll',toggleFloatingSocial);
-  window.addEventListener('resize',toggleFloatingSocial);
-  toggleFloatingSocial();
+
 </script>
 
 
