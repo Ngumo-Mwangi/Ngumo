@@ -1963,7 +1963,10 @@ window.addEventListener('resize', () => {
 <script>
 document.addEventListener("DOMContentLoaded", function(){
 
+  // Select ALL videos that should use this system
   const videos = document.querySelectorAll('.section-video');
+
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
   const observer = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
@@ -1971,35 +1974,45 @@ document.addEventListener("DOMContentLoaded", function(){
 
       if(entry.isIntersecting){
 
-        // Lazy load video
+        // Lazy load video when visible
         if(video.dataset.src && !video.src){
           video.src = video.dataset.src;
         }
 
-        // Ensure autoplay works on mobile
-        video.muted = true;
-        video.setAttribute("playsinline", "");
-        video.setAttribute("autoplay", "");
+        // Autoplay on desktop
+        if(!isMobile){
+          const playPromise = video.play();
 
-        const playPromise = video.play();
-
-        if(playPromise !== undefined){
-          playPromise.catch(()=>{});
+          if(playPromise !== undefined){
+            playPromise.catch(()=>{});
+          }
         }
 
       } 
       else{
-
         video.pause();
-
       }
 
     });
   }, { threshold:0.5 });
 
 
+  // Apply observer to every video
   videos.forEach(video=>{
+
     observer.observe(video);
+
+    // Mobile tap-to-play
+    if(isMobile){
+      video.addEventListener("click", ()=>{
+        if(video.paused){
+          video.play();
+        } else{
+          video.pause();
+        }
+      });
+    }
+
   });
 
 });
