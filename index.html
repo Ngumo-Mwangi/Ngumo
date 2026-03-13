@@ -1199,52 +1199,6 @@ height:170px;
 
 document.addEventListener("DOMContentLoaded",function(){
 
-/* ===== VIDEO SYSTEM ===== */
-
-const videos=document.querySelectorAll(".section-video");
-const isMobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-
-const video=entry.target;
-
-if(entry.isIntersecting){
-
-if(!video.src){
-video.src=video.dataset.src;
-}
-
-if(!isMobile){
-video.play().catch(()=>{});
-}
-
-}else{
-
-video.pause();
-
-}
-
-});
-},{threshold:.5});
-
-videos.forEach(video=>{
-
-observer.observe(video);
-
-if(isMobile){
-
-video.addEventListener("click",()=>{
-if(video.paused){
-video.play();
-}else{
-video.pause();
-}
-});
-
-}
-
-});
 
 
 /* ===== MAP ===== */
