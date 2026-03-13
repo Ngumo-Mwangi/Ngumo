@@ -947,7 +947,7 @@ box-shadow:0 8px 20px rgba(0,0,0,0.15);
       <i class="fas fa-motorcycle hobby-icon"></i>
       <h3>MotoGP</h3>
       <p>Excites me with skill, speed, and technical mastery, inspiring focus and discipline.</p>
-      <video class="section-video" muted loop playsinline data-src="assets/motogp.mp4"></video>
+      <video class="section-video" muted loop playsinline poster="assets/motogp.jpg" data-src="assets/motogp.mp4"></video>
     </div>
 
     <!-- Skateboarding -->
@@ -976,7 +976,7 @@ box-shadow:0 8px 20px rgba(0,0,0,0.15);
       <i class="fas fa-plane hobby-icon"></i>
       <h3>Travelling Adventures</h3>
       <p>Exploring new places, experiencing new cultures, and testing navigation and decision-making skills.</p>
-      <div id="travel-map"></div>
+      <div id="travel-map" style="width:100%; height:250px; border-radius:12px; margin-top:10px;"></div>
     </div>
 
     <!-- Drawing -->
@@ -1005,7 +1005,7 @@ box-shadow:0 8px 20px rgba(0,0,0,0.15);
       <i class="fas fa-pen-nib hobby-icon"></i>
       <h3>Tattooing</h3>
       <p>Combines art, personal expression, and storytelling to create lasting, meaningful designs for others.</p>
-      <video class="section-video" muted loop playsinline data-src="assets/pikini.mp4"></video>
+      <video class="section-video" muted loop playsinline poster="assets/pikini.jpg" data-src="assets/pikini.mp4"></video>
     </div>
 
     <!-- Songwriting -->
@@ -1020,7 +1020,7 @@ box-shadow:0 8px 20px rgba(0,0,0,0.15);
       <i class="fas fa-laptop hobby-icon"></i>
       <h3>IT Projects</h3>
       <p>Challenges me to solve problems, innovate, and apply technology for functional and creative solutions.</p>
-      <video class="section-video" muted loop playsinline data-src="assets/msee.mp4"></video>
+      <video class="section-video" muted loop playsinline poster="assets/msee.jpg" data-src="assets/msee.mp4"></video>
     </div>
 
     <!-- Fashion Design -->
@@ -1035,7 +1035,7 @@ box-shadow:0 8px 20px rgba(0,0,0,0.15);
       <i class="fas fa-chart-line hobby-icon"></i>
       <h3>Financial Markets</h3>
       <p>Combines analysis, strategy, and decision-making, helping me understand global systems and investments.</p>
-      <video class="section-video" muted loop playsinline data-src="assets/buda.mp4"></video>
+      <video class="section-video" muted loop playsinline poster="assets/buda.jpg" data-src="assets/buda.mp4"></video>
     </div>
 
     <!-- Swimming -->
@@ -1064,7 +1064,7 @@ box-shadow:0 8px 20px rgba(0,0,0,0.15);
       <i class="fas fa-flag-checkered hobby-icon"></i>
       <h3>Formula 1</h3>
       <p>Enjoy strategy, precision, speed, and high-performance competition.</p>
-      <video class="section-video" muted loop playsinline data-src="assets/Fomur1.mp4"></video>
+      <video class="section-video" muted loop playsinline poster="assets/formula1.jpg" data-src="assets/Fomur 1.mp4"></video>
     </div>
 
     <!-- Golf -->
@@ -1083,102 +1083,39 @@ box-shadow:0 8px 20px rgba(0,0,0,0.15);
 
   </div>
 
-</section>
+  <style>
+    /* Section styling */
+    #hobbies{ background:#111; color:#fff; font-family:'Poppins',sans-serif; padding:40px 6%; border-radius:12px; margin-bottom:40px; }
+    .section-title{ font-size:34px; text-align:center; color:#ffcc00; margin-bottom:35px; }
+    .hobbies-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:25px; }
+    .hobby-item{ background:#1a1a1a; padding:20px; border-radius:12px; text-align:center; transition:.3s; }
+    .hobby-item:hover{ transform:translateY(-5px); }
+    .hobby-icon{ font-size:34px; color:#ffcc00; margin-bottom:10px; }
+    .hobby-item h3{ margin-bottom:8px; }
+    .hobby-item p{ font-size:14px; color:#ccc; }
+    .section-video{ width:100%; height:200px; object-fit:cover; border-radius:10px; margin-top:10px; cursor:pointer; }
+    #travel-map{ width:100%; height:220px; margin-top:10px; border-radius:10px; }
+    @media(max-width:768px){ .section-title{ font-size:26px; } .section-video{ height:170px; } }
+  </style>
 
-<style>
-/* ===== HOBBIES SECTION ===== */
-#hobbies{
-  background:#111;
-  color:#fff;
-  font-family:'Poppins',sans-serif;
-  padding:40px 6%;
-  border-radius:12px;
-  margin-bottom:40px;
-}
-.section-title{
-  font-size:34px;
-  text-align:center;
-  color:#ffcc00;
-  margin-bottom:35px;
-}
-.hobbies-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-}
-.hobby-item{
-  background:#1a1a1a;
-  padding:20px;
-  border-radius:12px;
-  text-align:center;
-  transition:.3s;
-}
-.hobby-item:hover{
-  transform:translateY(-5px);
-}
-.hobby-icon{
-  font-size:34px;
-  color:#ffcc00;
-  margin-bottom:10px;
-}
-.hobby-item h3{
-  margin-bottom:8px;
-}
-.hobby-item p{
-  font-size:14px;
-  color:#ccc;
-}
-.section-video{
-  width:100%;
-  height:200px;
-  object-fit:cover;
-  border-radius:10px;
-  margin-top:10px;
-  cursor:pointer;
-}
-#travel-map{
-  width:100%;
-  height:220px;
-  margin-top:10px;
-  border-radius:10px;
-}
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+    
 
-/* MOBILE FIXES */
-@media(max-width:768px){
-  .section-title{font-size:26px;}
-  .hobbies-grid{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
-  .section-video{height:170px;}
-}
-</style>
-
-<!-- Leaflet CSS & JS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-<script>
-document.addEventListener("DOMContentLoaded",function(){
-  
-
-  /* ===== MAP ===== */
-  if(typeof L!=="undefined"){
-    const map=L.map("travel-map").setView([0,0],2);
-
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{
-      attribution:"© OpenStreetMap"
-    }).addTo(map);
-
-    const places=[
-      {name:"Nairobi",coords:[-1.2921,36.8219]},
-      {name:"Embu",coords:[-0.5390,37.4500]},
-      {name:"Tokyo",coords:[35.6762,139.6503]}
-    ];
-
-    places.forEach(p=>{
-      L.marker(p.coords).addTo(map).bindPopup(p.name);
+      // Map
+      if(typeof L !== "undefined"){
+        const map = L.map("travel-map").setView([0,0],2);
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { attribution:"© OpenStreetMap" }).addTo(map);
+        const places = [
+          {name:"Nairobi", coords:[-1.2921,36.8219]},
+          {name:"Embu", coords:[-0.5390,37.4500]},
+          {name:"Tokyo", coords:[35.6762,139.6503]}
+        ];
+        places.forEach(p => { L.marker(p.coords).addTo(map).bindPopup(p.name); });
+      }
     });
-  }
-});
-</script>
+  </script>
+</section>
 
     <!-- Future Goals -->
 <section id="destinations">
@@ -1993,59 +1930,78 @@ window.addEventListener('resize', () => {
 });
 </script>
 <script>
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function() {
 
-  // Select ALL videos that should use this system
-  const videos = document.querySelectorAll('.section-video');
-
+  const videos = document.querySelectorAll("video[data-src]");
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-  const observer = new IntersectionObserver((entries)=>{
-    entries.forEach(entry=>{
+  // Keep track of scroll direction
+  let lastScroll = window.scrollY;
+
+  // IntersectionObserver for lazy loading & visibility
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
       const video = entry.target;
 
-      if(entry.isIntersecting){
-
-        // Lazy load video when visible
-        if(video.dataset.src && !video.src){
-          video.src = video.dataset.src;
-        }
-
-        // Autoplay on desktop
-        if(!isMobile){
-          const playPromise = video.play();
-
-          if(playPromise !== undefined){
-            playPromise.catch(()=>{});
-          }
-        }
-
-      } 
-      else{
-        video.pause();
+      if(video.dataset.src && !video.src){
+        video.src = video.dataset.src;
       }
 
+      // Fade effect
+      video.style.transition = "opacity 0.6s ease";
+
+      if(entry.isIntersecting){
+        video.style.opacity = 1;
+      } else {
+        video.style.opacity = 0.2;
+        video.pause();
+      }
     });
-  }, { threshold:0.5 });
+  }, { threshold: 0.5 });
 
-
-  // Apply observer to every video
-  videos.forEach(video=>{
-
+  videos.forEach(video => {
+    video.style.opacity = 0.2;
     observer.observe(video);
 
-    // Mobile tap-to-play
     if(isMobile){
-      video.addEventListener("click", ()=>{
-        if(video.paused){
-          video.play();
-        } else{
-          video.pause();
-        }
+      video.addEventListener("click", () => {
+        if(video.paused) video.play();
+        else video.pause();
       });
     }
-
   });
+
+  // Smart auto-play/pause based on scroll direction
+  function smartPlayPause() {
+    const scrollY = window.scrollY;
+    const directionDown = scrollY > lastScroll;
+    lastScroll = scrollY;
+
+    let maxVisible = 0;
+    let videoToPlay = null;
+
+    videos.forEach(video => {
+      const rect = video.getBoundingClientRect();
+      const visible = Math.max(0, Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0));
+      
+      if(visible > maxVisible){
+        maxVisible = visible;
+        videoToPlay = video;
+      }
+    });
+
+    videos.forEach(video => {
+      if(video === videoToPlay){
+        if(!isMobile) video.play().catch(()=>{});
+      } else {
+        video.pause();
+      }
+    });
+  }
+
+  window.addEventListener("scroll", smartPlayPause);
+  window.addEventListener("resize", smartPlayPause);
+  smartPlayPause(); // initial check
 
 });
 </script>
