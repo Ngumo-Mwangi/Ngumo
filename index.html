@@ -1077,51 +1077,58 @@ box-shadow:0 8px 20px rgba(0,0,0,0.15);
       }
     });
   </script>
-  <script>
+<script>
 document.addEventListener("DOMContentLoaded", function() {
   const videos = document.querySelectorAll("video[data-src]");
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-  // Lazy-load & IntersectionObserver
+  // Lazy-load & IntersectionObserver for opacity/fade
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       const video = entry.target;
 
-      // Lazy-load video
+      // Lazy-load
       if(video.dataset.src && !video.src){
         video.src = video.dataset.src;
       }
 
       // Fade effect
       video.style.transition = "opacity 0.6s ease";
-      if(entry.isIntersecting){
-        video.style.opacity = 1;
-
-        // Autoplay if desktop
-        if(!isMobile){
-          video.play().catch(()=>{});
-        }
-
-      } else {
-        video.style.opacity = 0.2;
-        video.pause();
-      }
+      video.style.opacity = entry.isIntersecting ? 1 : 0.2;
     });
   }, { threshold: 0.5 });
 
-  // Initialize all videos
   videos.forEach(video => {
     video.style.opacity = 0.2;
     observer.observe(video);
-
-    // Click-to-play for mobile
-    if(isMobile){
-      video.addEventListener("click", () => {
-        if(video.paused) video.play();
-        else video.pause();
-      });
-    }
   });
+
+  // Play only the most visible video
+  function playMostVisible() {
+    let maxVisible = 0;
+    let videoToPlay = null;
+
+    videos.forEach(video => {
+      const rect = video.getBoundingClientRect();
+      const visible = Math.max(0, Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0));
+      if(visible > maxVisible){
+        maxVisible = visible;
+        videoToPlay = video;
+      }
+    });
+
+    videos.forEach(video => {
+      if(video === videoToPlay){
+        video.play().catch(()=>{});
+      } else {
+        video.pause();
+      }
+    });
+  }
+
+  window.addEventListener("scroll", playMostVisible);
+  window.addEventListener("resize", playMostVisible);
+  playMostVisible(); // initial check
 });
 </script>
 
